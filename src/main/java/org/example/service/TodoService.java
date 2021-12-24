@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.example.model.ToDoEntity;
 import org.example.model.ToDoRequest;
 import org.example.repository.ToDoRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -54,6 +55,7 @@ public class TodoService {
 		if (Objects.nonNull(toDoEntity.getCompleted())){
 			toDoEntity.setCompleted(request.getCompleted());
 		}
+		System.out.println(toDoEntity);
 		return this.toDoRepository.save(toDoEntity);
 	}
 
