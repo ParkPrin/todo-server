@@ -15,8 +15,7 @@ public class ToDoResponse {
 	private Long order;
 	private Boolean completed;
 
-	@Value("${server.localurl}")
-	private String baseUrl;
+	private final static String BASE_URL = "http://localhost:8080/";
 
 	private String url;
 
@@ -25,6 +24,6 @@ public class ToDoResponse {
 		this.title = toDoEntity.getTitle();
 		this.order = toDoEntity.getOrder();
 		this.completed = toDoEntity.getCompleted();
-		this.url = this.baseUrl + this.id;
+		this.url = BASE_URL + this.id;
 	}
 }

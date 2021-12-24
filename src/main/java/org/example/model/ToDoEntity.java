@@ -21,12 +21,12 @@ public class ToDoEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String title;
 
-	@Column(name = "todoOrder", nullable = false)
+	@Column(name = "todoOrder", nullable = true)
 	private Long order;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private Boolean completed;
 }
